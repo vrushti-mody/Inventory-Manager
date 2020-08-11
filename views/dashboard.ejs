@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Web UI Kit &amp; Dashboard Template based on Bootstrap">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords" content="adminkit, bootstrap, web ui kit, dashboard template, admin template">
+
+	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+	<title>Mnage.in | Dashboard</title>
+
+	<link href="/css/app.css" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" href="index.html">
+                    <span class="align-middle">Manage.in</span>
+                </a>
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						
+					</li>
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="/users/dashboard">
+                            <i class="align-middle" data-feather="star"></i> <span class="align-middle">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+						<a class="sidebar-link" href="/items/additem">
+                            <i class="align-middle" data-feather="plus-circle"></i> <span class="align-middle">Add Item</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+						<a class="sidebar-link" href="/items/allitems">
+                            <i class="align-middle" data-feather="bookmark"></i> <span class="align-middle">All Items</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+						<a class="sidebar-link" href="/orders/addorder">
+                            <i class="align-middle" data-feather="plus-circle"></i> <span class="align-middle">Add Order</span>
+                        </a>
+                    </li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="/orders/allorders">
+                            <i class="align-middle" data-feather="bookmark"></i> <span class="align-middle">My Orders</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+						<a class="sidebar-link" href="/priority/shelving">
+                            <i class="align-middle" data-feather="link"></i> <span class="align-middle">Re-Shelving Suggestions</span>
+                        </a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="/users/settings">
+                            <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Settings</span>
+                        </a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="/logout">
+                            <i class="align-middle" data-feather="log-out"></i> <span class="align-middle">Logout</span>
+                        </a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle d-flex">
+                    <i class="hamburger align-self-center"></i>
+                </a>
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown">
+                                <i class="align-middle" data-feather="settings"></i>
+                            </a>
+                            <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
+                               <span class="text-dark"><%= user.email %></span>
+                              </a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="/user/profile"><i class="align-middle mr-1" data-feather="user"></i> Profile</a>
+								<!-- <a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="pie-chart"></i> Analytics</a> -->
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/users/settings"><i class="align-middle mr-1" data-feather="settings"></i> Settings & Privacy</a>
+								<a class="dropdown-item" href="#"><i class="align-middle mr-1" data-feather="help-circle"></i> Help Center</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/logout">Log out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+            
+            <main class="content">
+				<div class="container-fluid p-0">
+
+					<div class="row mb-2 mb-xl-3">
+						<div class="col-auto d-none d-sm-block">
+							<h3><strong>Analytics</strong> Dashboard</h3>
+						</div>
+
+						<div class="col-auto ml-auto text-right mt-n1">
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
+									<li class="breadcrumb-item"><a href="#">AdminKit</a></li>
+									<li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Analytics</li>
+								</ol>
+							</nav>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xl-6 col-xxl-5 d-flex">
+							<div class="w-100">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="card">
+											<div class="card-body">
+												<h5 class="card-title mb-4">Sales</h5>
+												<h1 class="display-5 mt-1 mb-3">2.382</h1>
+												<div class="mb-1">
+													<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
+													<span class="text-muted">Since last week</span>
+												</div>
+											</div>
+										</div>
+										<div class="card">
+											<div class="card-body">
+												<h5 class="card-title mb-4">Visitors</h5>
+												<h1 class="display-5 mt-1 mb-3">14.212</h1>
+												<div class="mb-1">
+													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.25% </span>
+													<span class="text-muted">Since last week</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="card">
+											<div class="card-body">
+												<h5 class="card-title mb-4">Earnings</h5>
+												<h1 class="display-5 mt-1 mb-3">$21.300</h1>
+												<div class="mb-1">
+													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
+													<span class="text-muted">Since last week</span>
+												</div>
+											</div>
+										</div>
+										<div class="card">
+											<div class="card-body">
+												<h5 class="card-title mb-4">Orders</h5>
+												<h1 class="display-5 mt-1 mb-3">64</h1>
+												<div class="mb-1">
+													<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span>
+													<span class="text-muted">Since last week</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                        <div class="col-xl-6 col-xxl-5 d-flex">
+                            <!-- Add graph here later -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+    
+
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-left">
+							<p class="mb-0">
+								<a href="/" class="text-muted"><strong>Manage.in</strong></a> &copy;
+							</p>
+						</div>
+						<div class="col-6 text-right">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Help Center</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Terms</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	
+
+	<script src="../js/vendor.js"></script>
+	<script src="../js/app.js"></script>
+	
+
+</body>
+
+</html>

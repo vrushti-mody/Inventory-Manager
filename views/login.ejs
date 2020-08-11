@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Web UI Kit &amp; Dashboard Template based on Bootstrap">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords" content="adminkit, bootstrap, web ui kit, dashboard template, admin template">
+	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+	<title>Manage.in | Login</title>
+	<link href="css/app.css" rel="stylesheet">
+
+</head>
+<body>
+	<center>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<main class="content">
+				<div class="container-fluid p-0">
+					<h1 class="h3 mb-3">Welcome to Manage.in</h1>
+					<div class="row">
+						<div class="col-12 col-xl-3"></div>
+						<div class="col-12 col-xl-6">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title">Log In to your account</h5>
+								</div>
+								<div class="card-body">
+									<form id="form" method="post">
+										<div class="form-group">
+											<label class="form-label">Email address</label>
+											<input type="email" class="form-control" name="email" placeholder="Email">
+										</div>
+										<div class="form-group">
+											<label class="form-label">Password</label>
+											<input type="password" class="form-control" name="password" placeholder="Password">
+										</div>
+										<button type="submit" class="btn btn-primary">Submit</button>
+									</form>
+								</div>
+							</div>
+							<% if (locals.error) {%>
+								<p><%= error %></p>
+								<% } %>
+							<br>
+							<br>
+							<p>New company? <a href="/register">Sign Up</a> and get started</p>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+						</div>
+						<div class="col-12 col-xl-3"></div>
+					</div>
+				</div>
+			</main>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-left">
+							<p class="mb-0">
+								<a href="/" class="text-muted"><strong>Manage.in</strong></a> &copy;
+							</p>
+						</div>
+						<div class="col-6 text-right">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Help Center</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="#">Terms</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<script src="js/app.js"></script>
+</body>
+</html>
+
+
+
+	
