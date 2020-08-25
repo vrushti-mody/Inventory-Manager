@@ -14,8 +14,6 @@ router.get('/dashboard',isValidUser, async function(req,res,next){
   })
 });
 
-
-
 // Settings Route
 router.get('/settings',isValidUser,function(req,res,next){
   User.findOne({_id:req.user._id}).then(result=>{

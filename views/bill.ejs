@@ -26,7 +26,7 @@
 					<li class="sidebar-header">
 						
 					</li>
-					<li class="sidebar-item active">
+					<li class="sidebar-item ">
 						<a class="sidebar-link" href="/users/dashboard">
                             <i class="align-middle" data-feather="star"></i> <span class="align-middle">Dashboard</span>
                         </a>
@@ -46,7 +46,7 @@
                             <i class="align-middle" data-feather="plus-circle"></i> <span class="align-middle">Add Order</span>
                         </a>
                     </li>
-					<li class="sidebar-item">
+					<li class="sidebar-item active">
 						<a class="sidebar-link" href="/orders/allorders">
                             <i class="align-middle" data-feather="bookmark"></i> <span class="align-middle">My Orders</span>
                         </a>
@@ -101,78 +101,95 @@
             <main class="content">
 				<div class="container-fluid p-0">
 
-					<div class="row mb-2 mb-xl-3">
-						<div class="col-auto d-none d-sm-block">
-							<h3><strong>Analytics</strong> Dashboard</h3>
-						</div>
+					<h1 class="h3 mb-3">Invoice</h1>
 
-						<div class="col-auto ml-auto text-right mt-n1">
-							<nav aria-label="breadcrumb">
-								<ol class="breadcrumb bg-transparent p-0 mt-1 mb-0">
-									<li class="breadcrumb-item"><a href="#">AdminKit</a></li>
-									<li class="breadcrumb-item"><a href="#">Dashboards</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Analytics</li>
-								</ol>
-							</nav>
-						</div>
-					</div>
 					<div class="row">
-						<div class="col-xl-6 col-xxl-5 d-flex">
-							<div class="w-100">
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="card">
-											<div class="card-body">
-												<h5 class="card-title mb-4">Sales</h5>
-												<h1 class="display-5 mt-1 mb-3">2.382</h1>
-												<div class="mb-1">
-													<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
-													<span class="text-muted">Since last week</span>
-												</div>
-											</div>
+						<div class="col-12">
+							<div class="card">
+								<div class="card-body m-sm-3 m-md-5">
+									<div class="mb-4">
+										Hello <strong><%- order.name %></strong>,
+										<br /> This is the receipt for a payment of <strong>Rs <%- order.total %></strong> you made to <%- user.name %>.
+									</div>
+
+									<div class="row">
+										<div class="col-md-6">
+											<div class="text-muted">Payment No.</div>
+											<strong><%- order._id %></strong>
 										</div>
-										<div class="card">
-											<div class="card-body">
-												<h5 class="card-title mb-4">Visitors</h5>
-												<h1 class="display-5 mt-1 mb-3">14.212</h1>
-												<div class="mb-1">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.25% </span>
-													<span class="text-muted">Since last week</span>
-												</div>
-											</div>
+										<div class="col-md-6 text-md-right">
+											<div class="text-muted">Payment Date</div>
+											<strong><%- order.date %></strong>
 										</div>
 									</div>
-									<div class="col-sm-6">
-										<div class="card">
-											<div class="card-body">
-												<h5 class="card-title mb-4">Earnings</h5>
-												<h1 class="display-5 mt-1 mb-3">$21.300</h1>
-												<div class="mb-1">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
-													<span class="text-muted">Since last week</span>
-												</div>
-											</div>
+
+									<hr class="my-4" />
+
+									<div class="row mb-4">
+										<div class="col-md-6">
+											<div class="text-muted">Client</div>
+											<strong>
+											<%- order.name %>
+											</strong>
+											
 										</div>
-										<div class="card">
-											<div class="card-body">
-												<h5 class="card-title mb-4">Orders</h5>
-												<h1 class="display-5 mt-1 mb-3">64</h1>
-												<div class="mb-1">
-													<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span>
-													<span class="text-muted">Since last week</span>
-												</div>
-											</div>
+										<div class="col-md-6 text-md-right">
+											<div class="text-muted">Payment To</div>
+											<strong>
+												<%- user.name %>
+											</strong>
 										</div>
+									</div>
+
+									<table class="table table-sm">
+										<thead>
+											<tr>
+												<th>Description</th>
+												<th>Price</th>
+												<th>Quantity</th>
+												<th class="text-right">Amount</th>
+											</tr>
+										</thead>
+										<tbody>
+											<% for (i=0; i<order.items.length;i++){%>
+											<tr>
+												<td><%- order.items[i].itemname %></td>
+												<td><%- order.items[i].itemprice %></td>												
+												<td><%- order.items[i].quantity %></td>
+												<td class="text-right"><%- order.items[i].subtotal %></td>
+											</tr>
+											<% } %>
+											
+											
+											<tr>
+												
+												<th>&nbsp;</th>
+												<th>&nbsp;</th>
+												<th>Total </th>
+												<th class="text-right"><%- order.total %></th>
+											</tr>
+										</tbody>
+									</table>
+
+									<div class="text-center">
+										<!-- <p class="text-sm">
+											<strong>Extra note:</strong> Please send all items at the same time to the shipping address. Thanks in advance.
+										</p> -->
+
+										<a href="#" class="btn btn-primary">
+											Print this receipt
+										</a>
+										<a href="#" class="btn btn-primary">
+											Mail This Receipt
+										</a>
 									</div>
 								</div>
 							</div>
-                        </div>
-                        <div class="col-xl-6 col-xxl-5 d-flex">
-                            <!-- Add graph here later -->
-                        </div>
-                    </div>
-                </div>
-            </main>
+						</div>
+					</div>
+
+				</div>
+			</main>
     
 
 

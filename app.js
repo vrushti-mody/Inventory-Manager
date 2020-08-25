@@ -5,14 +5,19 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const {
+  ItemRouter,
+  UserRouter,
+  IndexRouter,
+  OrderRouter,
+  PriorityRouter
+} = require('./routes')
 var session = require('express-session');
 const passport = require('passport');
 var MongoStore = require('connect-mongo')(session);
 require('./passportconfig')
 var app = express();
-mongoose.connect('mongodb://localhost/inventory-manager');
+mongoose.connect(process.env.MONGODB_URI);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -41,8 +46,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', IndexRouter);
+app.use('/users', UserRouter);
+app.use('/items', ItemRouter);
+app.use('/orders', OrderRouter);
+app.use('/priority', PriorityRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
