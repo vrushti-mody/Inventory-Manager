@@ -110,7 +110,8 @@
 									<h5 class="card-title mb-0"><%- orders[i].name %></h5>
 								</div>
 								<div class="card-body">
-                                    <p class="card-text">Total (in Rs): <%- orders[i].total %></p>
+									<p class="card-text">Total (in Rs): <%- orders[i].total %></p>
+									<p class="card-text">Date: <%- orders[i].date %></p>
 									<a href="/orders/vieworder/<%- orders[i]._id %>" class="card-link btn btn-success">View</a>
                                     <button type="button"class=" btn btn-danger" data-toggle="modal" data-target="#centeredModalDanger">Delete</a>      
                                 </div>
